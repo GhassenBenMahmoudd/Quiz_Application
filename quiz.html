@@ -1,0 +1,215 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>QUIZ</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+	<!-- CSS Files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/gsdk-bootstrap-wizard.css" rel="stylesheet" />
+</head>
+
+<body>
+    <style>
+    #table_1 {
+        background-color: rgb(255, 255, 255);
+        width: 700px;
+        height: 420px;
+        text-align: center;
+    }
+    #center001 {
+        text-align: center;
+    }
+    button{
+    background-color: #f59d29;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    margin: 4px 2px;
+    width:20%;
+    height:20%;
+    border-radius: 50%;}
+  </style>
+
+     <div class="image-container set-full-height" style="background-image: url('assets/img/wizard.jpg')">
+    
+    <!--   Big container   -->
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+
+                <div class="card wizard-card" data-color="orange" id="wizardProfile">
+                    <div id="center001"><h1>Quiz</h1>
+        <hr>
+        <div id="center001">Question: <text id="q001">0</text> Score: <text id="score001">0</text> Attempt: <text id="attempts">5</text></div>
+        <p id="question01"></p> 
+        <p id="msg01"></p>
+        <p id="restart"></p>
+        <br />
+        <br />
+        <div id="starter01">
+            <button onclick="begin001()" id="b001">Begin</button><br />
+        </div>
+        
+        
+        <p id="n001"></p>
+        
+        <script>
+            var b = 0;
+            b++;
+            var c = 5;
+            c--;
+            var d = 0;
+            d++;
+
+            function begin001() {
+                document.getElementById("q001").innerHTML = d++;
+                document.getElementById("question01").innerHTML = "What is 5 + 5?" + "<br /><br /><br />" + "<button onclick=ans001() >10</button><br />"
+                 + "<button onclick=ans002()>8</button><br />" + "<button onclick=ans002() >25</button><br />";
+                document.getElementById("starter01").innerHTML = "";
+            }
+            function ans001() {
+            document.getElementById("score001").innerHTML = b++;
+            document.getElementById("question01").innerHTML = "Correct";
+            document.getElementById("starter01").innerHTML = "";
+            document.getElementById("n001").innerHTML = "<button onclick=nxt1()>Next</button><br />";
+            }
+            function ans002() {
+            document.getElementById("question01").innerHTML = "Incorrect";
+            document.getElementById("starter01").innerHTML = "";
+            document.getElementById("n001").innerHTML = "<button onclick=nxt1()>Next</button><br />";
+            document.getElementById("attempts").innerHTML = c--;
+            if (c < 0) {
+            document.getElementById("question01").innerHTML = "";           
+            document.getElementById("n001").innerHTML = "";
+            }
+            }
+
+           function nxt1() {
+           document.getElementById("question01").innerHTML = "What is 2 x 8?" + "<br /><br /><br />" + "<button onclick=ans004()>14</button><br />" 
+           + "<button onclick=ans004() >20</button><br />" + "<button onclick=ans003()>16</button><br />";
+           document.getElementById("n001").innerHTML = "";
+           document.getElementById("q001").innerHTML = d++;
+
+           }
+           function ans003() {
+           document.getElementById("score001").innerHTML = b++;
+           document.getElementById("question01").innerHTML = "Correct";
+
+           document.getElementById("starter01").innerHTML = "";
+           document.getElementById("n001").innerHTML = "<button onclick=nxt2()>Next</button><br />";
+           }
+           function ans004() {
+           document.getElementById("question01").innerHTML = "Incorrect";
+           document.getElementById("starter01").innerHTML = "";
+           document.getElementById("n001").innerHTML = "<button onclick=nxt2()>Next</button><br />";
+           document.getElementById("attempts").innerHTML = c--;
+           if (c < 0) {
+           document.getElementById("question01").innerHTML = "";          
+           document.getElementById("n001").innerHTML = "";
+            }
+            }
+           function nxt2() {
+           document.getElementById("question01").innerHTML = "What are baby sharks called?" + "<br /><br /><br />" + 
+           "<button onclick=ans005()>Pups</button><br />" + "<button onclick=ans006() >Fry</button><br />" + 
+           "<button onclick=ans006() >Sharklings</button><br />";
+           document.getElementById("n001").innerHTML = "";
+           document.getElementById("q001").innerHTML = d++;
+           }
+           function ans005() {
+           document.getElementById("score001").innerHTML = b++;
+           document.getElementById("question01").innerHTML = "Correct";
+           document.getElementById("starter01").innerHTML = "";
+           document.getElementById("n001").innerHTML = "<button onclick=nxt3()>Next</button><br />";
+           }
+           function ans006() {
+           document.getElementById("question01").innerHTML = "Incorrect";
+           document.getElementById("starter01").innerHTML = "";
+           document.getElementById("n001").innerHTML = "<button onclick=nxt3()>Next</button><br />";
+           document.getElementById("attempts").innerHTML = c--;
+           if (c < 0) {
+           document.getElementById("question01").innerHTML = "";         
+           document.getElementById("n001").innerHTML = "";
+           }
+           }
+           function nxt3() {
+           document.getElementById("question01").innerHTML = "Which is the largest of all sharks?" + "<br /><br /><br />" + 
+           "<button onclick=ans009() >Tiger shark</button><br />" + "<button onclick=ans008()>Whale shark</button><br />" +
+            "<button onclick=ans009() >Bull shark</button><br />";
+           document.getElementById("n001").innerHTML = "";
+           document.getElementById("q001").innerHTML = d++;
+           }
+           function ans008() {
+           document.getElementById("score001").innerHTML = b++;
+           document.getElementById("question01").innerHTML = "Correct";
+           document.getElementById("starter01").innerHTML = "";
+           document.getElementById("n001").innerHTML = "<button onclick=nxt4()>Next</button><br />";
+           }
+           function ans009() {
+           document.getElementById("question01").innerHTML = "Incorrect";
+           document.getElementById("starter01").innerHTML = "";
+           document.getElementById("n001").innerHTML = "<button onclick=nxt4()>Next</button><br />";
+           document.getElementById("attempts").innerHTML = c--;
+           if (c < 0) {
+           document.getElementById("question01").innerHTML = "";
+           document.getElementById("n001").innerHTML = "";
+           }
+           }
+
+           function nxt4() {
+           document.getElementById("question01").innerHTML = "Which is the greenest form of transportation?" + "<br /><br /><br />" + 
+           "<button onclick=ans0011() >Train</button><br />" + "<button onclick=ans0011() >Car</button><br />" + 
+           "<button onclick=ans0010() >Bicycle</button><br />" ;
+           document.getElementById("n001").innerHTML = "";
+           document.getElementById("q001").innerHTML = d++;
+           }
+           function ans0010() {
+           document.getElementById("score001").innerHTML = b++;
+           document.getElementById("question01").innerHTML = "Correct";
+
+           document.getElementById("starter01").innerHTML = "";
+           document.getElementById("n001").innerHTML = "<button onclick=nxt5()>Next</button><br />";
+           }
+           function ans0011() {
+           document.getElementById("question01").innerHTML = "Incorrect";
+           document.getElementById("starter01").innerHTML = "";
+           document.getElementById("n001").innerHTML = "<button onclick=nxt5()>Next</button><br />";
+           document.getElementById("attempts").innerHTML = c--;
+           if (c < 0) {
+           document.getElementById("question01").innerHTML = "";
+           document.getElementById("msg01").innerHTML = "Sorry. You lost!";
+           document.getElementById("n001").innerHTML = "";
+           document.getElementById("restart").innerHTML = "<button onclick=javascript:location.reload();>Restart</button>"
+           }
+           }
+
+
+           function nxt5() {
+           document.getElementById("question01").innerHTML = "";
+           document.getElementById("msg01").innerHTML = "End of Quiz.";
+           document.getElementById("n001").innerHTML = "";
+           document.getElementById("restart").innerHTML = "<button onclick=javascript:location.reload();>Restart</button>"
+}
+
+        </script>
+</div>
+                </div>
+            </div> <!-- wizard container -->
+        </div>
+        
+        </div><!-- end row -->
+        
+    </div> <!--  big container -->
+
+</div>
+
+</body>
+</html>
