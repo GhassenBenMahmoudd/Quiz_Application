@@ -7,6 +7,7 @@ Real-time feedback on answers.
 Display score at the end of the quiz.
 Simple, user-friendly interface built with HTML and styled using CSS.
 Interactive functionality powered by JavaScript.
+
 **Technologies Used:**
 HTML: Structure of the quiz.
 CSS: Styling and layout.
